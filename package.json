@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "serve": "nodemon app.js",
     "scss": "npm run scss-index && npm run scss-sign-in && npm run scss-sign-up && npm run scss-admin",
     "scss-index": "node-sass src/sass/index.sass src/public/css/index.css",
