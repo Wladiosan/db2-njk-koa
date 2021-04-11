@@ -9,6 +9,8 @@ const serve = require('koa-static')
 const app = new Koa()
 const router = new Router()
 
+const port = process.env.PORT || 3005
+
 const nunjucksEnvironment = new nunjucks.Environment(
     new nunjucks.FileSystemLoader(path.join(__dirname, './src/templates/'))
 );
@@ -32,4 +34,6 @@ router.use('/', globalRouter.router.routes())
 
 app.use(router.routes())
 
-app.listen(3005)
+app.listen(port, () => {
+    console.log(`Server is starting at PORT: ${port}`)
+})
